@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breda - My Skills</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #063665, #1B93F7, #0E559A);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            list-style: none;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(16px);
+            border-radius: 60px;
+            padding: 0.8rem 2.2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1.3rem;
+            transition: all 0.3s ease;
+            border-radius: 40px;
+            font-size: 1rem;
+        }
+
+        .navbar li a:hover {
+            background: rgba(85, 219, 247, 0.5);
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 0 12px rgba(110, 247, 255, 0.6);
+        }
+
+        .skills-card {
+            backdrop-filter: blur(18px);
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 700px;
+            margin: 1rem auto;
+            padding: 2rem 2rem 2.2rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .skills-content h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #fff, #a5f0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 1rem 1.2rem;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(4px);
+        }
+
+        .skill-box:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .skill-box i {
+            font-size: 1.6rem;
+        }
+
+        .skill-box i.fa-html5 {
+            color: #E44D26;
+        }
+
+        .skill-box i.fa-css3-alt {
+            color: #264DE4;
+        }
+
+        .skill-box i.fa-js {
+            color: #F7DF1E;
+        }
+
+        .skill-box i.fa-pencil-ruler {
+            color: #a855f7;
+        }
+
+        .skill-box i.fa-python {
+            color: #3776AB;
+        }
+
+        .skill-box i.fa-react {
+            color: #61DAFB;
+        }
+
+        .skill-box i.fa-database {
+            color: #00d4ff;
+        }
+
+        .skill-box i.fa-git-alt {
+            color: #F05032;
+        }
+
+        .skill-box span {
+            color: white;
+            font-weight: 500;
+        }
+
+        .skills-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #3b82f6;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+            transition: 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin-top: 1rem;
+        }
+
+        .skills-btn:hover {
+            background: #2563eb;
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(59,130,246,0.4);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .copyright p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 750px) {
+            body {
+                padding: 1rem;
+            }
+            .skills-card {
+                max-width: 95%;
+                padding: 1.5rem;
+            }
+            .skills-content h1 {
+                font-size: 1.6rem;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            .skill-box {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div class="skills-card">
+        <div class="skills-content">
+            <h1>&lt;/&gt; My Skills</h1>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-box">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-box">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-box">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <span>Designer</span>
+                </div>
+                <div class="skill-box">
+                    <i class="fab fa-github"></i>
+                    <span>Soon</span>
+                </div>
+                <div class="skill-box">
+                    <i class="fas fa-datbase"></i>
+                    <span></span>
+                </div>
+                <div class="skill-box">
+                    <i class="fab fa-gi-alt"></i>
+                    <span></span>
+                </div>
+                <div class="skill-box">
+                    <i class="fab fa-gihub"></i>
+                    <span> ّ</span>
+                </div>
+            </div>
+            <a href="home.html" class="skills-btn">Back to Home <i class="fas fa-home"></i></a>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Breda © 2026 Company No Copyright</p>
+    </div>
+
+</body>
+</html>

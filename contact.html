@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breda - Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #063665, #1B93F7, #0E559A);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            list-style: none;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(16px);
+            border-radius: 60px;
+            padding: 0.8rem 2.2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 1.3rem;
+            transition: all 0.3s ease;
+            border-radius: 40px;
+            font-size: 1rem;
+        }
+
+        .navbar li a:hover {
+            background: rgba(85, 219, 247, 0.5);
+            color: #000;
+            transform: scale(1.05);
+            box-shadow: 0 0 12px rgba(110, 247, 255, 0.6);
+        }
+
+        .contact-card {
+            backdrop-filter: blur(18px);
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 700px;
+            margin: 1rem auto;
+            padding: 2rem 2rem 2.2rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .contact-card h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #fff, #a5f0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .discord-btn {
+            background: #5865F2;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 2rem;
+        }
+
+        .discord-btn:hover {
+            background: #4752c4;
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(88, 101, 242, 0.5);
+        }
+
+        .comment-section {
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+
+        .comment-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group input, .form-group textarea {
+            padding: 12px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.15);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #1B93F7;
+            background: rgba(255,255,255,0.25);
+        }
+
+        .comment-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 0.5rem;
+        }
+
+        .comment-btn:hover {
+            background: #059669;
+            transform: scale(1.02);
+        }
+
+        .comments-list {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .comments-list h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .comment-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 12px 16px;
+            margin-bottom: 0.8rem;
+            border-left: 3px solid #1B93F7;
+        }
+
+        .comment-name {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .comment-name i {
+            font-size: 1.2rem;
+        }
+
+        .comment-text {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            word-break: break-word;
+        }
+
+        .comment-desc {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .copyright p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 750px) {
+            body {
+                padding: 1rem;
+            }
+            .contact-card {
+                max-width: 95%;
+                padding: 1.5rem;
+            }
+            .contact-card h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="navbar">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="contact-card">
+        <h1><i class="fas fa-envelope"></i> Contact Me</h1>
+        
+        <a href="https://discord.gg/YOUR_INVITE" target="_blank" class="discord-btn" id="discordLink">
+            <i class="fab fa-discord fa-lg"></i> Join Discord Server
+        </a>
+
+        <div class="comment-section">
+            <h3><i class="fas fa-comment-dots"></i> Leave a Comment</h3>
+            <form class="comment-form" id="commentForm">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Name / Username</label>
+                    <input type="text" id="commentName" placeholder="Enter your name..." required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-image"></i> Image Link (optional)</label>
+                    <input type="url" id="commentImage" placeholder="https://example.com/avatar.jpg">
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-tag"></i> Title / Subject</label>
+                    <input type="text" id="commentTitle" placeholder="Short title..." required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-pen"></i> Your Comment</label>
+                    <textarea id="commentMessage" rows="3" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit" class="comment-btn"><i class="fas fa-paper-plane"></i> Post Comment</button>
+            </form>
+
+            <div class="comments-list" id="commentsList">
+                <h4><i class="fas fa-history"></i> Comments</h4>
+                <div id="commentsContainer">
+                    <div class="comment-item">
+                        <div class="comment-name">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Breda</span>
+                        </div>
+                        <div class="comment-text">
+                            <strong>Welcome!</strong> - Feel free to leave a message or suggestion.
+                        </div>
+                        <div class="comment-desc">
+                            <i class="fas fa-calendar"></i> Example comment
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Breda © 2026 Company No Copyright</p>
+    </div>
+
+    <script>
+        const discordBtn = document.getElementById('discordLink');
+        const YOUR_DISCORD_INVITE = 'https://discord.gg/YOUR_INVITE_HERE';
+        discordBtn.href = YOUR_DISCORD_INVITE;
+
+        const commentForm = document.getElementById('commentForm');
+        const commentsContainer = document.getElementById('commentsContainer');
+
+        function loadComments() {
+            const saved = localStorage.getItem('bredaComments');
+            if(saved) {
+                const comments = JSON.parse(saved);
+                commentsContainer.innerHTML = '';
+                comments.forEach(comment => {
+                    addCommentToDOM(comment.name, comment.image, comment.title, comment.message);
+                });
+            }
+        }
+
+        function addCommentToDOM(name, imageUrl, title, message) {
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment-item';
+            const imgHtml = imageUrl ? `<img src="${imageUrl}" style="width:30px;height:30px;border-radius:50%;object-fit:cover;margin-left:8px;">` : '<i class="fas fa-user-circle" style="font-size:1.3rem;"></i>';
+            commentDiv.innerHTML = `
+                <div class="comment-name">
+                    ${imgHtml}
+                    <span>${escapeHtml(name)}</span>
+                </div>
+                <div class="comment-text">
+                    <strong>${escapeHtml(title)}</strong> - ${escapeHtml(message)}
+                </div>
+                <div class="comment-desc">
+                    <i class="fas fa-clock"></i> Just now
+                </div>
+            `;
+            commentsContainer.appendChild(commentDiv);
+        }
+
+        function escapeHtml(str) {
+            if(!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if(m === '&') return '&amp;';
+                if(m === '<') return '&lt;';
+                if(m === '>') return '&gt;';
+                return m;
+            });
+        }
+
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('commentName').value.trim();
+            const image = document.getElementById('commentImage').value.trim();
+            const title = document.getElementById('commentTitle').value.trim();
+            const message = document.getElementById('commentMessage').value.trim();
+            
+            if(!name || !title || !message) {
+                alert('Please fill in name, title and comment');
+                return;
+            }
+
+            const newComment = { name, image, title, message, date: new Date().toISOString() };
+            const saved = localStorage.getItem('bredaComments');
+            let comments = saved ? JSON.parse(saved) : [];
+            comments.unshift(newComment);
+            localStorage.setItem('bredaComments', JSON.stringify(comments));
+            
+            addCommentToDOM(name, image, title, message);
+            commentForm.reset();
+        });
+
+        loadComments();
+    </script>
+</body>
+</html>
